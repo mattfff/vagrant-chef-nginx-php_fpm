@@ -23,5 +23,5 @@ To build your this Nginx + PHP-FPM virtual environment:
 
     <clone this git repo>
     <cd into the Git repo>
-    vagrant box add ubuntu_11.04_server_amd64 http://dl.dropbox.com/u/7490647/talifun-ubuntu-11.04-server-i386.box
+    vagrant box add precise32 http://files.vagrantup.com/precise32.box
     vagrant up
