@@ -1,27 +1,26 @@
 {
   "name": "drupal-fpm",
+  "json_class": "Chef::Role",
   "default_attributes": {
     "hosts": {
-      "localhost_aliases": ["drupal.nginx.local"]
+      "localhost_aliases": ["competitive.na.leagueoflegends.com"]
     }
   },
   "run_list": [
+    "recipe[apt]",
     "recipe[build-essential]",
     "recipe[mysql::server]",
     "recipe[php]",
-    "recipe[php::php5-cli]",
-    "recipe[php::pear]",
     "recipe[php::module_apc]",
     "recipe[php::module_curl]",
     "recipe[php::module_gd]",
-    "recipe[php::module_xdebug]",
     "recipe[php::module_mysql]",
     "recipe[php::module_memcache]",
     "recipe[memcached]",
     "recipe[imagemagick]",
     "recipe[hosts]",
     "recipe[nginx]",
-    "recipe[drupal-fpm]",
+    "recipe[drupal-fpm]"
   ],
   "description": "",
   "chef_type": "role",

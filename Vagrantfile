@@ -11,6 +11,16 @@ Vagrant::Config.run do |config|
   
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = "cookbooks"
+    chef.roles_path = "roles"
+    chef.add_recipe("apt")
     chef.add_role("drupal-fpm")
+
+    chef.json = {
+      mysql: {
+        server_root_password: "root",
+        server_repl_password: "root",
+        server_debian_password: "root"
+      }
+    }
   end
 end
