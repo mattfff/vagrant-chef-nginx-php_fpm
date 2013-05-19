@@ -1,10 +1,11 @@
-Vagrant::Config.run do |config|
+Vagrant.configure("2") do |config|
 
   config.vm.box = "precise32"
+  config.vm.network :forwarded_port, guest: 80, host: 8080
 
-  config.vm.customize do |vm|
-    vm.memory_size = 1024
-  end
+  #config.vm.customize do |vm|
+  #  vm.memory_size = 1024
+  #end
 
   # config.vm.network("10.234.90.20")
   # config.vm.share_folder("v-root", "/vagrant", ".", :nfs => true)
